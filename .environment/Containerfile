@@ -1,0 +1,23 @@
+# Shared dev tooling comes from image_develop-base: see
+# .apple-container/image_develop-base/
+FROM image_develop-base
+
+# Deno builds the website (deno task build), shrinks the art's originals
+# (deno task buildArtImages, through sharp, which brings its own libvips),
+# serves the preview (deno task startServer) and builds the business card.
+# It's a single static binary; copy it straight out of its official
+# multi-arch image: https://docs.deno.com/runtime/
+COPY --from=denoland/deno:bin-2.9.7@sha256:bc5aa4466e21b6d3021226a85ba2e1911f7c386254d97b9d797903ab74edace2 \
+    /deno /usr/local/bin/deno
+
+# Headless Chromium prints the resume to a pdf and renders its link preview
+# (deno task buildPdf, buildSocialImage); Debian's package is used because
+# Chrome's own headless builds skip linux on arm64. ffmpeg makes the landing
+# page's video, icons and link preview (website/scripts/encodeVideo.sh,
+# makeImages.sh); Debian's build includes the SVT-AV1 and x264 encoders they
+# use. The base image runs as coder, and apt needs root.
+USER root
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends chromium-headless-shell ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+USER coder

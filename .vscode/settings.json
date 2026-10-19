@@ -1,0 +1,5 @@
+{
+  // the editor's type checking from deno, which reads deno.json (jsx through
+  // preact, npm: and jsr: imports), rather than plain typescript's
+  "deno.enable": true
+}

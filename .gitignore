@@ -1,0 +1,23 @@
+# code-server's data for this project: extensions and editor state
+.coder-data/
+
+# Finder's folder settings on macOS
+.DS_Store
+
+# the built website, which gets deployed rather than committed: deno task
+# build, in website/, builds all of it
+website/build/
+
+# the pages the build renders into the website's assets, like the resume's pdf;
+# never deployed
+website/assetPages/
+
+# wrangler's local cache from deploys, including the cloudflare account id
+.wrangler/
+
+# the business card's PDFs, which card/scripts/buildCard.ts builds, and their
+# previews
+card/out/
+
+# screenshots from designing the business card
+card/review/
