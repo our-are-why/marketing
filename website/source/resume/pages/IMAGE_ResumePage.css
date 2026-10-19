@@ -1,0 +1,20 @@
+@import "../../styles/document.css";
+@import "../../shared/styles/accessibilityOnly.css";
+@import "../../shared/styles/__BASE_DocumentSection.css";
+@import "../../shared/styles/__BASE_SectionContent.css";
+@import "../styles/__LABELED_DocumentSection.css";
+@import "../styles/TEXT_SectionContent.css";
+
+/* the link preview's card: the resume's header alone, at the content's
+   width, so it wraps as it does on the page. The card has a link preview's
+   shape (1200 by 630, and deno task buildSocialImage scales it up to that),
+   with even room around the header's text and labels, which span 781 by
+   351.25px from 14px in and 12px down: 62px on every side where the shape
+   allows. Measured from the header as it is, so if its text changes, these
+   need measuring again. */
+.card-socialPage {
+  box-sizing: border-box;
+  width: 905px;
+  height: 475px;
+  padding: 49.875px 25px 0 48px;
+}

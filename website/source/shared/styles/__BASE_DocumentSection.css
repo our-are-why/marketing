@@ -1,0 +1,24 @@
+.container-documentSection {
+  display: flex;
+  flex-direction: column;
+  padding-inline: calc(var(--spacer) * 3 / 2);
+  padding-block-end: calc(var(--spacer) * 2);
+}
+
+.labelContainer-documentSection {
+  display: flex;
+  padding-top: var(--spacer);
+}
+
+/* a grey label, its padding the one links share (see document.css) */
+.headerLabel-documentSection {
+  padding: var(--labelPaddingBlock) var(--labelPaddingInline);
+  background-color: var(--textBackgroundGrey);
+  border-radius: var(--borderRadius);
+  font-weight: 700;
+
+  @supports (text-box: trim-both cap alphabetic) {
+    text-box: trim-both cap alphabetic;
+    padding-block: var(--labelPaddingBlockTrimmed);
+  }
+}

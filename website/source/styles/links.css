@@ -1,0 +1,39 @@
+:root {
+  --linkPurple: #5e4d75;
+}
+
+a {
+  position: relative;
+  padding: var(--labelPaddingBlock) var(--labelPaddingInline);
+  border-radius: var(--borderRadius);
+  color: var(--linkPurple);
+  font-style: italic;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+@supports (text-box: trim-both cap alphabetic) {
+  a {
+    text-box: trim-both cap alphabetic;
+    padding-block: var(--labelPaddingBlockTrimmed);
+  }
+}
+
+a:hover,
+a:focus-visible {
+  background-color: var(--linkPurple);
+  color: #fff;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--linkPurple);
+  outline-offset: 2px;
+}
+
+/* An invisible tap area bigger than the word, at least 44px tall on phones
+   as touch guidelines recommend, without moving anything */
+a::after {
+  content: "";
+  position: absolute;
+  inset: -1em -0.5em;
+}

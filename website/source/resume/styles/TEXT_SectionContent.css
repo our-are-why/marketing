@@ -1,0 +1,3 @@
+.textContainer-sectionContent {
+  padding-inline-start: calc(var(--spacer) * 9 / 8);
+}

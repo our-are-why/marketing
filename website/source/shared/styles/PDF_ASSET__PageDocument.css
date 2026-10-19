@@ -1,0 +1,7 @@
+.bodyContainer-pdf {
+  width: var(--contentWidth);
+}
+
+.bodyContainer-pdf .container-navigationFooter {
+  padding-bottom: calc(var(--spacer) / 4);
+}

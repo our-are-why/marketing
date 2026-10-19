@@ -1,0 +1,14 @@
+.contentContainer-graphicSection {
+  display: flex;
+  flex-direction: column;
+  padding-block: calc(var(--spacer) * 3 / 2) var(--spacer);
+  padding-inline: calc(var(--spacer) / 4);
+}
+
+.image-graphicSection {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--borderRadius);
+  background-color: var(--textBackgroundGrey);
+}

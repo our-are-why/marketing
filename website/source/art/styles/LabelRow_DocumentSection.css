@@ -1,0 +1,23 @@
+.container-labelRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: calc(var(--spacer) * 2);
+}
+
+.labelsContainer-labelRow {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: var(--spacer);
+}
+
+.linksContainer-labelRow {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--spacer);
+}

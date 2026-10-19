@@ -1,0 +1,25 @@
+.columnList_container-sectionContent {
+  padding-inline-start: calc(var(--spacer) * 9 / 8);
+}
+
+.itemContainer-columnList--sectionContent {
+  display: flex;
+  flex-direction: row;
+  &:not(:last-child) {
+    padding-bottom: calc(var(--spacer) * 5 / 4);
+  }
+}
+
+.item-columnList--sectionContent {
+  padding-left: var(--spacer);
+}
+
+.detail-listItem--temporal---sectionContent {
+  font-style: italic;
+}
+
+.dateRange-listItem--temporal---sectionContent {
+  white-space: nowrap;
+  font-style: italic;
+  color: var(--textSoftBlack);
+}

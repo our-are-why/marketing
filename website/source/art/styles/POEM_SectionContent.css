@@ -1,0 +1,45 @@
+.container-poemContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--spacer) * 2);
+  padding-inline-start: calc(var(--spacer) * 9 / 8);
+  --markAxis: 4ch;
+}
+
+.stanza-poemContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--spacer) / 2);
+}
+
+.pause-poemContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--spacer) * 2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block: calc(var(--spacer) * -5 / 8);
+    inset-inline-start: calc(var(--markAxis) - var(--spacer) * 5 / 8);
+    width: calc(var(--spacer) * 5 / 4);
+    box-sizing: border-box;
+    border: calc(var(--spacer) / 16) solid var(--textBackgroundGrey);
+    border-radius: calc(var(--spacer) * 5 / 8);
+  }
+}
+
+.signature-poemContent {
+  font-style: italic;
+  color: var(--textSoftBlack);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1ch;
+    margin-block-end: calc(var(--spacer) * 3 / 4);
+    border-block-start: calc(var(--spacer) / 8) solid
+      var(--textBackgroundGrey);
+  }
+}

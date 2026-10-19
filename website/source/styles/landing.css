@@ -1,0 +1,90 @@
+@import "./fonts.css";
+@import "./links.css";
+
+/* Text keeps its proportion to the art: the browser's default
+   size (16px unless the visitor changed it) on tablets and laptops, growing
+   to 1.375 times that at 2560px wide, and a size smaller on phones held
+   upright, where the art is only as wide as the phone. Sizes and gaps are
+   set in rem or em, so they follow it. */
+html {
+  background: #fff;
+  color: #000;
+  font-size: clamp(1rem, 0.625rem + 0.47vw, 1.375rem);
+}
+
+@media (max-width: 30em) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
+::selection {
+  background: var(--linkPurple);
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  font: bold 1rem/1.5 "Courier Prime", "Courier New", Courier, monospace;
+}
+
+:root {
+  --view-height: 100vh;
+}
+
+@supports (height: 100svh) {
+  :root {
+    --view-height: 100svh;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: var(--view-height);
+}
+
+main::before,
+main::after {
+  content: "";
+}
+
+main::before {
+  flex: 1;
+}
+
+main::after {
+  flex: 4;
+}
+
+
+nav {
+  padding: 1.5rem 1rem 0;
+}
+
+nav:last-child {
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 1.375em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: flex;
+  white-space: nowrap;
+}
+
+:root {
+  --borderRadius: 0.25em;
+  --labelPaddingInline: 0.3125em;
+  --labelPaddingBlock: 0.1875em;
+  --labelPaddingBlockTrimmed: 0.5em;
+}

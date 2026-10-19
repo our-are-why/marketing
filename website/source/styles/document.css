@@ -1,0 +1,25 @@
+@import "./fonts.css";
+@import "./links.css";
+
+:root {
+  --spacer: 8px;
+  --borderRadius: 4px;
+
+  --textBackgroundGrey: #EEEEEE;
+  --textSoftBlack: #5C5C5C;
+
+  --labelPaddingInline: calc(var(--spacer) * 5 / 8);
+  --labelPaddingBlock: calc(var(--spacer) * 3 / 8);
+  --labelPaddingBlockTrimmed: var(--spacer);
+}
+
+body {
+  margin: 0;
+  font-family: "Courier Prime", monospace;
+  font-size: 15px;
+  text-wrap: pretty;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: calc(5 / 4);  
+}

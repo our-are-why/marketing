@@ -1,0 +1,39 @@
+/* each of the resume's sections: its labels in a column on the left, its
+   body on the right, the two stacking where the page is too narrow */
+.contentContainer-documentSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-inline-start: calc(var(--spacer) / 4);
+}
+
+.headerContainer-documentSection {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 256px;
+  display: flex;
+  flex-direction: column;
+  padding-block-start: calc(var(--spacer) / 2);
+}
+
+.bodyContainer-documentSection {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 512px;
+  padding-inline-start: calc(var(--spacer) / 2);
+  padding-inline-end: var(--spacer);
+  padding-block-start: calc(var(--spacer) * 3);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.bodyContent_container-documentSection {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 512px;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--spacer) * 3);
+  padding-bottom: calc(var(--spacer) * 3);
+}

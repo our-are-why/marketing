@@ -1,0 +1,15 @@
+.wrapList_container-sectionContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-inline-start: calc(var(--spacer) * 9 / 8);
+  margin-top: calc(var(--spacer) * -5 / 4);
+}
+
+.itemContainer-wrapList--sectionContent {
+  display: flex;
+  flex-direction: row;
+  padding-top: calc(var(--spacer) * 5 / 4);
+  padding-right: calc(var(--spacer) * 3 / 2);
+}
