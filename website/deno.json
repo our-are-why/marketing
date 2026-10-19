@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "imports": {
+    "preact": "npm:preact@10",
+    "preact-render-to-string": "npm:preact-render-to-string@6",
+    "sharp": "npm:sharp@0.34",
+    "@std/http": "jsr:@std/http@1",
+    "esbuild": "npm:esbuild@0.25.0",
+    "subset-font": "npm:subset-font@2.4.0"
+  },
+  "tasks": {
+    "encodeVideo": "./scripts/encodeVideo.sh",
+    "makeImages": "./scripts/makeImages.sh",
+    "makeFonts": "deno run --allow-read --allow-write=./public/assets/fonts ./scripts/makeFonts.ts",
+    "buildArtImages": "deno run --allow-read --allow-write=./public/assets/art --allow-env --allow-ffi ./scripts/buildArtImages.ts",
+    "buildWebsite": "deno run --allow-write=./build,./assetPages --allow-read --allow-env --allow-run ./scripts/buildWebsite.tsx",
+    "startServer": "deno run --allow-net --allow-read=./build ./scripts/startServer.ts",
+    "buildPdf": {
+      "command": "deno run --allow-run=/usr/lib/chromium/chromium-headless-shell --allow-net=127.0.0.1 --allow-read=./build,./assetPages --allow-write=./build/assets/resume.pdf ./scripts/buildPdf.ts",
+      "dependencies": ["buildWebsite"]
+    },
+    "buildSocialImage": {
+      "command": "deno run --allow-run=/usr/lib/chromium/chromium-headless-shell --allow-net=127.0.0.1 --allow-read=./build,./assetPages --allow-write=./build/assets ./scripts/buildSocialImage.ts",
+      "dependencies": ["buildWebsite"]
+    },
+    "build": {
+      "dependencies": ["buildPdf", "buildSocialImage"]
+    },
+    "wrangler": "deno run -A npm:wrangler@4.144.0",
+    "deploy": {
+      "command": "deno task wrangler pages deploy build --project-name our-are-why",
+      "dependencies": ["build"]
+    }
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["jsx-no-children-prop"]
+    }
+  }
+}
